@@ -10,7 +10,7 @@ set fileencodings=ucs-bom,utf-8,cp936,gb2312,gb18030,big5
 set number
 
 "设置默认打开窗口大小
-set lines=60 columns=170
+set lines=39 columns=87
 
 "设置窗口透明度
 "set transparency=10
@@ -102,6 +102,9 @@ inoremap <C-U> <C-G>u<C-U>
 "使 "p" 命令在Visual模式下用拷贝的字符覆盖被选中的字符。
 vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>
 
+inoremap <C-N> <C-J>
+inoremap <C-J> <C-N>
+inoremap qq <Esc>
 
 "-------------------------------------------------------------------------------
 "            搜索设置
@@ -162,6 +165,3 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
           \ | wincmd p | diffthis
 endif
-
-
-imap <C-I> <Esc>
